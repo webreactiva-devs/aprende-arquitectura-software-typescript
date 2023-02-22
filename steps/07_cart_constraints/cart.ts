@@ -25,7 +25,7 @@ class Cart {
 
   public add(cartProduct: CartProduct): void {
     const { product, quantity } = cartProduct;
-    if (quantity < 1) {
+    if (quantity < 0) {
       throw new Error("Quantity must be greater than 0");
     }
     const existingProduct = this.#cartProducts.find(
